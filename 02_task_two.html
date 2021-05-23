@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Task 2 - Update, Transition and Motion</title>
+        <link rel="stylesheet" href="./libs/styles.css" type="text/css">
+        <link 
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" 
+            rel="stylesheet" 
+            integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" 
+            crossorigin="anonymous"
+        >
+        <script src="./libs/p5.min.js"></script>
+        <script src="./libs/d3.v6.min.js"></script>
+        <script src="./libs/utils.js"></script>
+        <script src="./02_chart.js"></script>
+    </head>
+    <body>
+        <header>
+            <button class="btn btn-secondary" onclick="changeDataset()">Change dataset</button>
+            <button class="btn btn-success" onclick="addData()">Add entry</button>
+            <div class="row">
+                <button class="btn btn-danger col-auto" onclick="removeData()">Remove entry</button>
+                <select id="arr-remove-opt" class="form-select col-5" style="width: auto;">
+                    <option value="first">First</option>
+                    <option value="last" selected>Last</option>
+                </select>
+            </div>
+        </header>
+        <main id="main">
+            <script>
+                window.onload = () => {
+                    createChart();
+                };
+            </script>
+        </main>
+    </body>
+</html>

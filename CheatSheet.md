@@ -50,16 +50,17 @@ Verzögerungen können über `delay()` realisiert werden.
 
 Zum Beispiel: `.delay(1000)`
 
-**Wichtig**
+<strong style="color:#900">Vorsicht</strong>
 
-`delay()` sollte nur mit Vorsicht und gutem Grund genutzt werden. Nutzer sollten nicht warten müssen.
+`delay()` sollte nur mit Bedacht und gutem Grund genutzt werden.
+Nutzer sollten nicht warten müssen.
 
 ### .ease()
 Stil der Übergangsanimation lassen sich mit `ease()` anpassen.
 
 Zum Beispiel: `.ease(d3.easeLinear) `
 
-**Wichtig**
+<strong style="color:#900">Vorsicht</strong>
 
 ease() muss nach transition() aber vor attr() angewendet werden. 
 
@@ -86,7 +87,7 @@ on() ist eine Methode zum Ausführen einer Funktion vor Beginn oder am Ende der 
 		.attr("fill", "black")
 })
 ```
-**Vorsicht**
+<strong style="color:#900">Vorsicht</strong>
 
 transition in `on("start")`, kann dazu führen das andere Updates mit Übergängen, wie Positionsänderungen, nicht mehr durchgeführt werden. Standardmäßig können mehrere transitions nicht durchgeführt werden. Neuere transitions stoppen und überschreiben ältere.
 Für `on("end", …)` gilt dies nicht. Die Hauptübergänge sind am Ende bereits abgeschlossen und somit kann hier gefahrlos transitions verwendet werden.
@@ -127,7 +128,7 @@ d3.select("p").on("click", function() {
 		});
 });
 ```
-**Wichtig**
+<strong style="color:#900">Vorsicht</strong>
 
 Hier kann keine Arrow-Function als Callback genutzt werden, da `this` sonst nicht verfügbar ist.
 
@@ -161,7 +162,7 @@ Der selection.join() besitzt drei Parameter:
 * update() – aktualisieren der Elemente mit den daten
 * exit() – entfernen von Elementen ohne Daten
 
-**Vorsicht**
+<strong style="color:#900">Vorsicht</strong>
 
 selection.join() wurde erst mit der Version 1.4 eingeführt. 
 
@@ -182,14 +183,11 @@ selection.join() wurde erst mit der Version 1.4 eingeführt.
 )
 ```
 ## Weitere Links
-* [Building shapes with d3]()
-* [Create Axes in D3.js]()
-* [Scale functions | D3 in Depth]()
-* [d3/d3-ease: Easing functions for smooth animation]()
-* [d3/d3-transition: Animated transitions for D3 selections]()
-* [Handling entering and exiting elements with D3's .join() function]()
-* [SVG Circle]()
-* [d3.min, d3.max, d3.extent / D3 / Observable]()
-
-
-
+* [Building shapes with d3](https://www.d3-graph-gallery.com/graph/shape.html)
+* [Create Axes in D3.js](https://www.tutorialsteacher.com/d3js/axes-in-d3)
+* [Scale functions | D3 in Depth](https://www.d3indepth.com/scales/)
+* [d3/d3-ease: Easing functions for smooth animation](https://github.com/d3/d3-ease)
+* [d3/d3-transition: Animated transitions for D3 selections](https://github.com/d3/d3-transition)
+* [Handling entering and exiting elements with D3's .join() function](https://www.createwithdata.com/enter-exit-with-d3-join/)
+* [SVG Circle](https://www.w3schools.com/graphics/svg_circle.asp)
+* [d3.min, d3.max, d3.extent / D3 / Observable](https://observablehq.com/@d3/d3-extent)

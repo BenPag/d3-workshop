@@ -50,7 +50,7 @@ Verzögerungen können über `delay()` realisiert werden.
 
 Zum Beispiel: `.delay(1000)`
 
-<strong style="color:#900">Vorsicht</strong>
+<span style="color:#FF0000">Vorsicht</strong>
 
 `delay()` sollte nur mit Bedacht und gutem Grund genutzt werden.
 Nutzer sollten nicht warten müssen.

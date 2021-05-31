@@ -175,9 +175,9 @@ Der selection.join() besitzt drei Parameter:
 Ähnlich wie bei on() kann auch innerhalb eines join(), mittels call(), in entsprechenden Funktionen weitere Operation eingebunden werden. So können Transitions an beispielsweise exit() gebunden werden, die dann während des Entfernens von Elementen ausgewirkt werden.
 ```javascript
 svg.selectAll("rect").join(
-(enter) => enter,
-(update) => update,
-(exit) => exit.call(exit => 
+  (enter) => enter,
+  (update) => update,
+  (exit) => exit.call(exit => 
     exit.transition()
     .attr(r, 0)
     .on(end, function () {

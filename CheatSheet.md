@@ -50,19 +50,17 @@ Verzögerungen können über `delay()` realisiert werden.
 
 Zum Beispiel: `.delay(1000)`
 
-<span style="color:#FF0000">Vorsicht</strong>
+>	**Vorsicht!**
+>	
+>	`delay()` sollte nur mit Bedacht und gutem Grund genutzt werden. Nutzer sollten nicht warten müssen.
 
-`delay()` sollte nur mit Bedacht und gutem Grund genutzt werden.
-Nutzer sollten nicht warten müssen.
 
 ### .ease()
 Stil der Übergangsanimation lassen sich mit `ease()` anpassen.
 
-Zum Beispiel: `.ease(d3.easeLinear) `
-
-<strong style="color:#900">Vorsicht</strong>
-
-ease() muss nach transition() aber vor attr() angewendet werden. 
+>	**Vorsicht!**
+>	
+>	`ease()` muss nach `transition()` aber vor `attr()` angewendet werden. 
 
 In d3 kann aus einer Vielzahl von Animationen gewählt werden. Hier einige Beispiele:
 * d3.easeLinear – Konstante Geschwindigkeit der Animation.
@@ -87,12 +85,14 @@ on() ist eine Methode zum Ausführen einer Funktion vor Beginn oder am Ende der 
 		.attr("fill", "black")
 })
 ```
-<strong style="color:#900">Vorsicht</strong>
+>	**Vorsicht!**
+>
+>	transition in `on("start")`, kann dazu führen das andere Updates mit Übergängen, wie Positionsänderungen, nicht mehr durchgeführt werden. 
+>	Standardmäßig können mehrere transitions nicht durchgeführt werden. Neuere transitions stoppen und überschreiben ältere.
+>	Für `on("end", …)` gilt dies nicht. Die Hauptübergänge sind am Ende bereits abgeschlossen und somit kann hier gefahrlos transitions verwendet werden.
 
-transition in `on("start")`, kann dazu führen das andere Updates mit Übergängen, wie Positionsänderungen, nicht mehr durchgeführt werden. Standardmäßig können mehrere transitions nicht durchgeführt werden. Neuere transitions stoppen und überschreiben ältere.
-Für `on("end", …)` gilt dies nicht. Die Hauptübergänge sind am Ende bereits abgeschlossen und somit kann hier gefahrlos transitions verwendet werden.
-
-Beispiel: OnClick-Event, bei dem ein Datensatz mit neuen Daten aktualisiert wird:
+### Codebeispiel für Transitions
+Beim nachfolgenden Beispiel wird beim Klick ein Datensatz mit neuen Daten aktualisiert.
 ```
 d3.select("p").on("click", function() {
 	//Einträge des Datensatzes der beim onClick eingefügt wird
@@ -128,21 +128,21 @@ d3.select("p").on("click", function() {
 		});
 });
 ```
-<strong style="color:#900">Vorsicht</strong>
-
-Hier kann keine Arrow-Function als Callback genutzt werden, da `this` sonst nicht verfügbar ist.
+>	**Vorsicht!**
+>
+>	Hier kann keine Arrow-Function als Callback genutzt werden, da `this` sonst nicht verfügbar ist.
 
 ## Key-Binding with .data()
 Key Binding sind eine Möglichkeit Daten mit einem künstlichen Schlüssel als unique identifier zu verknüpfen. So ist der Datensatz unabhängig vom Index des Arrays.
 `.data(<array>, <key-function>)`
 ```
 const dataset = [ 
-	{ key: 0, value: 5 },
-	{ key: 1, value: 10 },
-	{ key: 2, value: 13 },
-	{ key: 3, value: 19 },
-	{ key: 4, value: 21 },
-	{ key: 5, value: 25 } 
+  { key: 0, value: 5 },
+  { key: 1, value: 10 },
+  { key: 2, value: 13 },
+  { key: 3, value: 19 },
+  { key: 4, value: 21 },
+  { key: 5, value: 25 } 
 ];
 svg.selectAll("rect")
 	.data(dataset, (d) => d.key);
@@ -162,9 +162,9 @@ Der selection.join() besitzt drei Parameter:
 * update() – aktualisieren der Elemente mit den daten
 * exit() – entfernen von Elementen ohne Daten
 
-<strong style="color:#900">Vorsicht</strong>
-
-selection.join() wurde erst mit der Version 1.4 eingeführt. 
+>	**Vorsicht!**
+>	
+>	selection.join() wurde erst mit der Version 1.4 eingeführt. 
 
 ### selection.call()
 
@@ -182,6 +182,7 @@ selection.join() wurde erst mit der Version 1.4 eingeführt.
 	)
 )
 ```
+
 ## Weitere Links
 * [Building shapes with d3](https://www.d3-graph-gallery.com/graph/shape.html)
 * [Create Axes in D3.js](https://www.tutorialsteacher.com/d3js/axes-in-d3)
